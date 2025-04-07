@@ -31,7 +31,8 @@ function Header() {
       }}
       animate={hidden ? "hidden" : "visible"}
       transition={{ duration: 0.4, ease: easeInOut }}
-      className="sticky top-0 z-50 w-full backdrop-blur-md bg-white/80 shadow-sm"
+      className="sticky top-0 z-50 w-full backdrop-blur-md bg-white shadow-sm" // Added `bg-white` here
+      style={{ backgroundColor: "rgba(255, 255, 255, 0.95)" }} // Added inline style for slight transparency
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
         <div className="flex items-center">

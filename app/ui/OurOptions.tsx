@@ -248,7 +248,7 @@ const TiltCard = ({
         transformStyle: "preserve-3d",
         transform,
       }}
-      className="relative h-80 w-full max-w-[280px] cursor-pointer rounded-xl bg-white sm:h-96"
+      className="relative h-80 w-full max-w-[280px] cursor-pointer rounded-xl bg-gray-100 sm:h-96"
     >
       <div
         style={{

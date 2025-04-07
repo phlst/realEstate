@@ -1,8 +1,9 @@
 import Image from "next/image";
+import ShinyButton from "./ShinyButton";
 
 function Hero() {
   return (
-    <div className="relative">
+    <div className="relative ">
       <div className="relative h-screen overflow-hidden">
         <Image
           src="/images/hero_background.jpg"
@@ -15,20 +16,24 @@ function Hero() {
         <div className="absolute inset-0 flex items-center px-6 sm:px-16 md:px-24">
           <div className="max-w-4xl">
             <h1 className="mb-6 text-5xl font-bold text-white drop-shadow-lg md:text-6xl">
-              Find Your Dream Home
+              Discover Your Dream Home with Real Estate
             </h1>
-            <p className="mb-8 text-lg text-white drop-shadow-md md:text-xl">
-              Discover exclusive properties in prime locations with our expert
-              real estate services
+            <p className="mb-8 text-xl font-semibold max-w-150 text-white drop-shadow-md md:text-xl">
+              Experience luxury living at its finest. Discover your dream home
+              in our modern residential complex. Explore our available
+              apartments and find the perfect place to call home. Enjoy
+              top-notch amenities and a vibrant community designed for your
+              lifestyle.
             </p>
-            <div className="flex flex-wrap gap-4">
+            {/* <div className="flex flex-wrap gap-4">
               <button className="rounded-full bg-white px-8 py-3 text-lg font-medium text-slate-900 shadow-lg transition hover:bg-opacity-90">
                 Explore Properties
               </button>
               <button className="rounded-full bg-transparent px-8 py-3 text-lg font-medium text-white ring-2 ring-white transition hover:bg-white/10">
                 Contact Us
               </button>
-            </div>
+            </div> */}
+            <ShinyButton />
           </div>
         </div>
       </div>
