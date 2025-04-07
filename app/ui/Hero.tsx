@@ -25,14 +25,7 @@ function Hero() {
               top-notch amenities and a vibrant community designed for your
               lifestyle.
             </p>
-            {/* <div className="flex flex-wrap gap-4">
-              <button className="rounded-full bg-white px-8 py-3 text-lg font-medium text-slate-900 shadow-lg transition hover:bg-opacity-90">
-                Explore Properties
-              </button>
-              <button className="rounded-full bg-transparent px-8 py-3 text-lg font-medium text-white ring-2 ring-white transition hover:bg-white/10">
-                Contact Us
-              </button>
-            </div> */}
+
             <ShinyButton />
           </div>
         </div>
