@@ -27,8 +27,10 @@ function ApartmentCard({
         <Image
           src={image}
           alt="Image for apartment"
-          layout="fill"
           className="object-cover"
+          sizes="cover"
+          fill={true}
+          priority
         />
       </div>
       <div className="m-5">
