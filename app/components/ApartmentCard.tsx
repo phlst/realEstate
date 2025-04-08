@@ -1,5 +1,9 @@
+"use client";
 import Image from "next/image";
+import { builder } from "../lib/sanityClient";
+import { useRouter } from "next/navigation";
 
+// Instead of defining props inline, use the global Apartment type
 function ApartmentCard({
   title,
   rooms,
@@ -7,25 +11,30 @@ function ApartmentCard({
   price,
   area,
   image,
-}: {
-  title: string;
-  rooms: number;
-  status: "available" | "reserved" | "sold";
-  price: number;
-  area: number;
-  image: string;
-}) {
+  id,
+}: Omit<Apartment, "_id"> & { id: string }) {
+  const router = useRouter();
+
   const statusColors = {
     available: "bg-green-100 text-green-800",
     reserved: "bg-yellow-100 text-yellow-800",
     sold: "bg-red-100 text-red-800",
   };
 
+  function handleOnClick() {
+    router.push(`/apartments/${id}`);
+  }
+
+  const source = builder.image(image);
+
   return (
-    <div className="w-full max-w-lg  border rounded-lg shadow-lg bg-white flex flex-col transform transition-transform hover:scale-105">
+    <div
+      onClick={handleOnClick}
+      className="w-full max-w-lg border rounded-lg shadow-lg bg-white flex flex-col transform transition-transform hover:scale-105 cursor-pointer"
+    >
       <div className="relative h-48 w-full mb-4 rounded-t-lg overflow-hidden">
         <Image
-          src={image}
+          src={source.url()}
           alt="Image for apartment"
           className="object-cover"
           sizes="cover"
@@ -43,9 +52,15 @@ function ApartmentCard({
         <div className="text-gray-600 mb-4">
           <p className="text-lg font-bold">Rooms: {rooms}</p>
           <p className="text-lg font-bold">Area: {area} m²</p>
-          <p className="text-lg font-bold">Price: ${price.toLocaleString()}</p>
+          <p className="text-lg font-bold">Price: ${price}</p>
         </div>
-        <button className="w-full py-2 px-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-200">
+        <button
+          onClick={(e) => {
+            e.stopPropagation();
+            handleOnClick();
+          }}
+          className="w-full py-2 px-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-200"
+        >
           View Details
         </button>
       </div>

@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import Apartments from "../components/Apartments";
 import ApartmentSidebar from "../components/ApartmentSidebar";
 
@@ -5,7 +6,9 @@ async function page() {
   return (
     <div className="flex gap-30">
       <ApartmentSidebar />
-      <Apartments />
+      <Suspense fallback={"loading..."}>
+        <Apartments />
+      </Suspense>
     </div>
   );
 }
