@@ -10,7 +10,6 @@ function Footer() {
     <footer className="bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          {/* Company Info */}
           <div className="col-span-1 md:col-span-2">
             <h3 className="text-xl font-semibold text-blue-600 mb-4">
               Premium Homes Realty
@@ -21,7 +20,6 @@ function Footer() {
               professionalism.
             </p>
             <div className="flex space-x-4 text-indigo-600">
-              {/* Social Media Icons */}
               <a
                 href="#"
                 className="hover:text-blue-600 transition-colors"
@@ -52,7 +50,6 @@ function Footer() {
             </div>
           </div>
 
-          {/* Quick Links */}
           <div>
             <h3 className="text-md font-semibold text-blue-600 mb-4">
               Quick Links
@@ -101,7 +98,6 @@ function Footer() {
             </ul>
           </div>
 
-          {/* Contact Info */}
           <div>
             <h3 className="text-md font-semibold text-blue-600 mb-4">
               Contact Us

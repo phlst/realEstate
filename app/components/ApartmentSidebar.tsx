@@ -1,6 +1,6 @@
 "use client";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 export function ApartmentSidebar() {
   const [buttons, setButtons] = useState([
@@ -34,6 +34,18 @@ export function ApartmentSidebar() {
   const router = useRouter();
   const params = new URLSearchParams(searchParams);
   const pathname = usePathname();
+
+  useEffect(() => {
+    const availabilityParam = searchParams.get("availability");
+    if (availabilityParam) {
+      setButtons((prev) =>
+        prev.map((button) => ({
+          ...button,
+          isActive: button.filter === availabilityParam,
+        }))
+      );
+    }
+  }, [searchParams]);
 
   const handleButtonClick = (index: number, text: string) => {
     setButtons((prev) =>
@@ -71,6 +83,10 @@ export function ApartmentSidebar() {
     params.delete("price");
     params.delete("area");
     params.delete("rooms");
+    router.replace(`${pathname}?${params.toString()}`, { scroll: false });
+  };
+
+  const handleApply = () => {
     router.replace(`${pathname}?${params.toString()}`, { scroll: false });
   };
 
@@ -158,7 +174,10 @@ export function ApartmentSidebar() {
           >
             Reset
           </button>
-          <button className="flex-1 py-2 px-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 font-medium shadow-sm transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+          <button
+            onClick={handleApply}
+            className="flex-1 py-2 px-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 font-medium shadow-sm transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+          >
             Apply
           </button>
         </div>

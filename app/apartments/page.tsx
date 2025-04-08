@@ -1,16 +1,22 @@
-import { Suspense } from "react";
 import Apartments from "../components/Apartments";
 import ApartmentSidebar from "../components/ApartmentSidebar";
 
-async function page() {
+export default function ApartmentsPage({
+  searchParams,
+}: {
+  searchParams: {
+    availability?: string;
+    price?: string;
+    area?: string;
+    rooms?: string;
+  };
+}) {
   return (
-    <div className="flex gap-30">
+    <div className="flex h-screen">
       <ApartmentSidebar />
-      <Suspense fallback={"loading..."}>
-        <Apartments />
-      </Suspense>
+      <div className="flex-1 overflow-y-auto">
+        <Apartments searchParams={searchParams} />
+      </div>
     </div>
   );
 }
-
-export default page;

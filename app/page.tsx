@@ -1,4 +1,3 @@
-import Footer from "./components/Footer";
 import Hero from "./ui/Hero";
 import LoadSlide from "./ui/LoadSlide";
 import OurOptions from "./ui/OurOptions";
@@ -11,7 +10,6 @@ export default function Home() {
       <Hero />
       <OurOptions />
       <Testimonials />
-      <Footer />
     </div>
   );
 }
