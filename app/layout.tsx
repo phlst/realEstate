@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 import "./globals.css";
+import Header from "./components/Header";
 
 export const metadata: Metadata = {
   title: "Real Estate Web",
@@ -14,7 +15,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="bg-amber-50">{children}</body>
+      <body className="bg-white h-screen">
+        <Header />
+        {children}
+      </body>
     </html>
   );
 }

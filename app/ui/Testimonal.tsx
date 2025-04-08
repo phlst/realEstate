@@ -78,7 +78,7 @@ function Testimonials() {
                           />
                         </div>
                       ) : (
-                        <div className="w-24 h-24 rounded-full bg-indigo-500 flex items-center justify-center text-white text-2xl font-bold">
+                        <div className="w-24 h-24 rounded-full bg-blue-700 flex items-center justify-center text-white text-2xl font-bold">
                           {testimonialsData[currentIndex].name
                             .split(" ")
                             .map((n) => n[0])
@@ -92,7 +92,7 @@ function Testimonials() {
                   <div className="h-full flex flex-col justify-between">
                     <div>
                       <svg
-                        className="h-10 w-10 text-indigo-500 mb-4"
+                        className="h-10 w-10 text-blue-700 mb-4"
                         fill="currentColor"
                         viewBox="0 0 32 32"
                       >
@@ -103,7 +103,7 @@ function Testimonials() {
                       </p>
                     </div>
                     <footer className="mt-4">
-                      <p className="text-indigo-600 font-semibold text-lg">
+                      <p className="text-blue-700 font-semibold text-lg">
                         {testimonialsData[currentIndex].name}
                       </p>
                     </footer>
